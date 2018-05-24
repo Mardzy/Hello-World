@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Browser, NodeJs, AMD practice</title>
+        <script src="scripts/underscore.js" charset="utf-8"></script>
+        <script src="./scripts/hi.js" charset="utf-8"></script>
+        <script src="./scripts/hello.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <h1 style="margin: 45vh 40vw; color: steelblue">Hello World!</h1>
+
+    <!--<script data-main="scripts/main.js" src="scripts/requirejs.js"></script>-->
+    <!--<script>-->
+            <!--require(['main'], function (itv) {-->
+                <!--console.log('From amd:', itv.hello.say());-->
+                <!--console.log('From amd:', itv.hi.say());-->
+            <!--});-->
+    <!--</script>-->
+    <script>
+            console.log('From browser:', itv.hello.say());
+            console.log('From browser:', itv.hi.say());
+
+            var hi = require('hi');
+            var hello = require('hello');
+
+            require(['hi', 'hello'], function(hi, hello) {
+
+            });
+
+            var hi = window.itv.hi;
+            var hello = window.itv.hello;
+
+    </script>
+    </body>
+</html>
